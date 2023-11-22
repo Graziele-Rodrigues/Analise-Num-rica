@@ -1,32 +1,34 @@
-function [x, Iter, Info] = gauss(n, A, b, Toler, IterMax)
+function [x, Iter, Info] = jacobi (n, A, b, Toler, IterMax)
   for i = 1 : n
     x(i) = b(i)/A(i,i);
   endfor
   Iter = 0;
   while 1
     Iter = Iter + 1;
-    NormaNum = 0;
-    NormaDen = 0;
-    for i = 1 : n
+    for j = 1 : n
       Soma = 0;
       for j = 1 : n
         if i ~= j
           Soma = Soma + A(i,j)*x(j);
         endif
       endfor
-      v(i) = x(i);
-      x(i) = (b(i) - Soma)/A(i,i);
+      v(i) = (b(i) - Soma)/A(i,i);
+    endfor
+    NormaNum = 0;
+    NormaDen = 0;
+    for i = 1 : n
       t = abs(v(i) - x(i));
       if t > NormaNum
         NormaNum = t;
       endif
-      if abs(x(i)) > NormaDen
-          NormaDen = abs(x(i));
+      if abs(v(i)) > NormaDen
+        NormaDen = abs(v(i));
       endif
+      x(i) = v(i);
     endfor
     NormaRel = NormaNum/NormaDen;
     disp(Iter);
-    disp('x');
+    disp('x=');
     disp(x);
     disp(NormaRel);
     if NormaRel <= Toler || Iter >= IterMax
@@ -39,3 +41,5 @@ function [x, Iter, Info] = gauss(n, A, b, Toler, IterMax)
     Info = 1;
   endif
 endfunction
+
+
