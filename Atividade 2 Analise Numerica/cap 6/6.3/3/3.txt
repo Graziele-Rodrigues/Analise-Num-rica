@@ -1,0 +1,1 @@
+A precisão do método aumenta com aumento do grau do polinômio. Além do que este método é mais barato computacionalmente em comparação aos que utilizam solucao de sistema linerares.
