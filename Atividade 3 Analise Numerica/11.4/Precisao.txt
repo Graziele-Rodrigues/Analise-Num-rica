@@ -1,0 +1,23 @@
+Newton cotes foi menos preciso, nele obtemos:
+
+Função 1:
+Valor da integral: 44.6667
+Info: 0
+Função 2:
+Valor da integral: 0
+Info: -10
+Função 3:
+Valor da integral: -0.7781
+Info: 0
+
+enquanto no gauss_legendre:
+                                                                                                                                                                                                                                             
+Função 1:
+Valor da integral: 44.6667
+Info: 0
+Função 2:
+Valor da integral: 96783.0018
+Info: 0
+Função 3:
+Valor da integral: -1.0004
+Info:
